@@ -3,12 +3,14 @@ from rest_framework.response import Response
 from materials.models import Course
 from subscription.models import Subscription
 from django.shortcuts import get_object_or_404
+from rest_framework_simplejwt import authentication
 
 
 # Create your views here.
 
 
 class SubscriptionAPIView(APIView):
+    authentication_classes = (authentication.JWTAuthentication,)
 
     def post(self, *args, **kwargs):
         user = self.request.user

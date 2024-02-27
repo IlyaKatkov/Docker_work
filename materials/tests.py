@@ -53,7 +53,7 @@ class CourseAPITest(APITestCase):
             '/course/',
             data=data)
 
-        self.assertEquals(
+        self.assertEqual(
             response.status_code,
             status.HTTP_201_CREATED
         )
@@ -63,7 +63,7 @@ class CourseAPITest(APITestCase):
         response = self.client.delete(
             '/course/10/')
 
-        self.assertEquals(
+        self.assertEqual(
             response.status_code,
             status.HTTP_204_NO_CONTENT
         )
@@ -73,7 +73,7 @@ class CourseAPITest(APITestCase):
         self.client.force_authenticate(user=self.user)
         response = self.client.get(
             '/lesson/')
-        self.assertEquals(
+        self.assertEqual(
             response.status_code,
             status.HTTP_200_OK
         )
@@ -91,7 +91,7 @@ class CourseAPITest(APITestCase):
             '/course/',
             data=data)
         print(response)
-        self.assertEquals(
+        self.assertEqual(
             response.status_code,
             status.HTTP_201_CREATED
         )
@@ -102,7 +102,7 @@ class CourseAPITest(APITestCase):
             '/lesson/delete/1/')
         print(Lesson.objects.all())
 
-        self.assertEquals(
+        self.assertEqual(
             response.status_code,
             status.HTTP_204_NO_CONTENT
         )

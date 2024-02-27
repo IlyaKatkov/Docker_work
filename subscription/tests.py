@@ -35,7 +35,7 @@ class SubscriptionAPITest(APITestCase):
             '/subscription/',
             data=data)
 
-        self.assertEquals(
+        self.assertEqual(
             responce.status_code,
             status.HTTP_200_OK
         )
