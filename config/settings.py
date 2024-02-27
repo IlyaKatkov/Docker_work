@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'payments',
     'subscription',
     'django_filters',
+    'drf_yasg',
 
 ]
 
