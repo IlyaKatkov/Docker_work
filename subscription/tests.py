@@ -31,11 +31,11 @@ class SubscriptionAPITest(APITestCase):
             "course": self.course.pk
         }
         self.client.force_authenticate(user=self.user)
-        responce = self.client.post(
+        response = self.client.post(
             '/subscription/',
             data=data)
 
         self.assertEqual(
-            responce.status_code,
+            response.status_code,
             status.HTTP_200_OK
         )

@@ -37,7 +37,7 @@ class CourseAPITest(APITestCase):
         self.client.force_authenticate(user=self.user)
         response = self.client.get(
             '/course/')
-        self.assertEquals(
+        self.assertEqual(
             response.status_code,
             status.HTTP_200_OK
         )
